@@ -53,18 +53,32 @@ class App extends React.Component {
       <div> 
         <h1>Expense tracker</h1>
         <p>Your balance is: {this.state.balance}</p>
-        <input
-         placheolder='Enter a new description'
-         type='text' 
-         value={this.state.newDescription} 
-         onChange={e => this.setState({newDescription: e.target.value})}/>
-        <input
-         placheolder='Enter a new value'
-         type='number' 
-         value={this.state.newValue} 
-         onChange={e => this.setState({newValue: parseInt(e.target.value)})}/>
-        <button onClick={this.addExpense}>Add expense</button> 
-        <button onClick={this.addIncome}>Add income</button>
+        <div id='form-container'>
+          <div class='row'>
+            <div class='input-container'>
+              <label>Description</label>
+              <input
+                placheolder='Enter a new description'
+                type='text' 
+                value={this.state.newDescription} 
+                id='description-input'
+                onChange={e => this.setState({newDescription: e.target.value})}/>
+            </div>
+
+            <div class='input-container'>
+              <input
+                placheolder='Enter a new value'
+                type='number' 
+                value={this.state.newValue}
+                id='value-input' 
+                onChange={e => this.setState({newValue: parseInt(e.target.value)})}/>
+            </div>
+          </div>
+          <div class='row'>
+            <button onClick={this.addExpense}>Add expense</button> 
+            <button onClick={this.addIncome}>Add income</button>
+          </div>
+        </div>
         <ItemList items={this.state.items} deleteMyItem={this.deleteItem}/> 
       </div>
     );
