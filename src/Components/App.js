@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import ItemList from './ItemList';
+import Input from './Input';
 
 import { uuid } from 'uuidv4';
 
@@ -54,24 +55,21 @@ class App extends React.Component {
         <h1>Expense tracker</h1>
         <p>Your balance is: {this.state.balance}</p>
         <div id='form-container'>
-          <div class='row'>
-            <div class='input-container'>
-              <label>Description</label>
-              <input
-                placheolder='Enter a new description'
-                type='text' 
-                value={this.state.newDescription} 
+          <div className='row'>
+            <div className='input-container'>
+              <Input
+                placeholder='Description' 
+                onChange={text => this.setState({newDescription: text})} 
                 id='description-input'
-                onChange={e => this.setState({newDescription: e.target.value})}/>
+                value={this.state.newDescription}/>
             </div>
 
             <div class='input-container'>
-              <input
-                placheolder='Enter a new value'
+              <Input
                 type='number' 
                 value={this.state.newValue}
                 id='value-input' 
-                onChange={e => this.setState({newValue: parseInt(e.target.value)})}/>
+                onChange={text => this.setState({newValue: parseInt(text)})}/>
             </div>
           </div>
           <div class='row'>
