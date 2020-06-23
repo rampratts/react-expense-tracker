@@ -8,6 +8,8 @@ body {
     font-family: 'Proza-libre';
 }
 
+button:focus {outline:0;}
+
 #form-container {
     display: grid;
     grid-gap: 1rem;
@@ -28,3 +30,24 @@ body {
     justify-content: space-evenly;
 }
 
+.add-btn { 
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    transition: all .3s;
+}
+
+.add-btn:hover { 
+    filter: brightness(1.4);
+    transform: scale(1.1);
+}
+
+.add-btn.income { 
+    background-color: #44a623;
+    border: 1px solid #1c4a0d;
+}
+
+.add-btn.expense { 
+    background-color: #d91818;
+    border: 1px solid #590909;
+}

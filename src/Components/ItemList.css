@@ -1,0 +1,24 @@
+li {
+    list-style-type: none;
+}
+
+.container { 
+    width: 40rem;
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.description {
+    width: 15rem;
+    word-break: break-all;
+}
+
+.value {
+    display: flex;
+    width: 7rem;
+    justify-content: space-between;
+    word-break: break-all;
+}

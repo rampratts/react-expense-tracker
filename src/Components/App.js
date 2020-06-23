@@ -73,8 +73,8 @@ class App extends React.Component {
             </div>
           </div>
           <div class='row'>
-            <button onClick={this.addExpense}>Add expense</button> 
-            <button onClick={this.addIncome}>Add income</button>
+            <button onClick={this.addIncome} className='add-btn income'>+</button>
+            <button onClick={this.addExpense} className='add-btn expense'>-</button> 
           </div>
         </div>
         <ItemList items={this.state.items} deleteMyItem={this.deleteItem}/> 
