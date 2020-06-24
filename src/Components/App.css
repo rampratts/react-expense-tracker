@@ -10,9 +10,17 @@ body {
 
 button:focus {outline:0;}
 
-#form-container {
+#input-container {
     display: grid;
-    grid-gap: 1rem;
+    grid-template-columns: 1fr;
+    grid-row-gap: 1rem;
+    justify-items: center;
+}
+
+#button-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 #value-input {
@@ -23,6 +31,10 @@ button:focus {outline:0;}
 #description-input {
     width: 15rem;
     height: 1.5rem;
+}
+
+#root {
+    width: 100%;
 }
 
 .row {
@@ -50,4 +62,16 @@ button:focus {outline:0;}
 .add-btn.expense { 
     background-color: #d91818;
     border: 1px solid #590909;
+}
+
+@media screen and (min-width: 450px) {
+    #root {
+        width: 70%;
+    }
+
+    #input-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 1rem;
+    }
 }

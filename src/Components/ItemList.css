@@ -1,9 +1,13 @@
+ul {
+    padding: 0;
+}
+
 li {
     list-style-type: none;
 }
 
 .container { 
-    width: 40rem;
+    width: 100%;
     background-color: red;
     display: flex;
     justify-content: space-between;
@@ -12,13 +16,12 @@ li {
 }
 
 .description {
-    width: 15rem;
+    max-width: 50%;
     word-break: break-all;
 }
 
 .value {
     display: flex;
-    width: 7rem;
-    justify-content: space-between;
+    align-items: center;
     word-break: break-all;
 }

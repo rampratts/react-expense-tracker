@@ -51,31 +51,26 @@ class App extends React.Component {
 
   render() {
     return (
-      <div> 
+      <div class="content"> 
         <h1>Expense tracker</h1>
         <p>Your balance is: {this.state.balance}</p>
-        <div id='form-container'>
-          <div className='row'>
-            <div className='input-container'>
-              <Input
-                placeholder='Description' 
-                onChange={text => this.setState({newDescription: text})} 
-                id='description-input'
-                value={this.state.newDescription}/>
-            </div>
+        <div id='input-container'>
+          <Input
+            placeholder='Description' 
+            onChange={text => this.setState({newDescription: text})} 
+            id='description-input'
+            value={this.state.newDescription}
+          />
+          <Input
+            type='number' 
+            value={this.state.newValue}
+            id='value-input' 
+            onChange={text => this.setState({newValue: parseInt(text)})}/>
+        </div>
 
-            <div class='input-container'>
-              <Input
-                type='number' 
-                value={this.state.newValue}
-                id='value-input' 
-                onChange={text => this.setState({newValue: parseInt(text)})}/>
-            </div>
-          </div>
-          <div class='row'>
-            <button onClick={this.addIncome} className='add-btn income'>+</button>
-            <button onClick={this.addExpense} className='add-btn expense'>-</button> 
-          </div>
+        <div id='button-container'>
+          <button onClick={this.addIncome} className='add-btn income'>+</button>
+          <button onClick={this.addExpense} className='add-btn expense'>-</button>
         </div>
         <ItemList items={this.state.items} deleteMyItem={this.deleteItem}/> 
       </div>
