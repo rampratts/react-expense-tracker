@@ -53,7 +53,7 @@ class App extends React.Component {
     return (
       <div class="content"> 
         <h1>Expense tracker</h1>
-        <p>Your balance is: {this.state.balance}</p>
+        <p>Balance: {this.state.balance}</p>
         <div id='input-container'>
           <Input
             placeholder='Description' 
@@ -69,8 +69,8 @@ class App extends React.Component {
         </div>
 
         <div id='button-container'>
-          <button onClick={this.addIncome} className='add-btn income'>+</button>
-          <button onClick={this.addExpense} className='add-btn expense'>-</button>
+          <i onClick={this.addIncome} className='add-btn income fas fa-plus'></i>
+          <i onClick={this.addExpense} className='add-btn expense fas fa-minus'></i>
         </div>
         <ItemList items={this.state.items} deleteMyItem={this.deleteItem}/> 
       </div>

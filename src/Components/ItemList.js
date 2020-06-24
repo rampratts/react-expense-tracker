@@ -5,13 +5,13 @@ function ItemList(props) {
     return (
         <ul>
             {props.items.map(i => 
-                <li key={i.id} className='container'>
+                <li key={i.id} className={`container ${i.type === 'expense' ? 'expense' : 'income'}`}>
                     <div className='description'>
                         {i.description}
                     </div>
                     <div className='value'>
                         {i.value} 
-                        <button onClick={e => props.deleteMyItem(i.id)}>X</button>
+                        <i onClick={e => props.deleteMyItem(i.id)} id='delete-button' class="fas fa-trash-alt"></i>
                     </div>
                 </li>
             )}

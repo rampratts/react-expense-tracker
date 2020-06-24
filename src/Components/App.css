@@ -43,10 +43,14 @@ button:focus {outline:0;}
 }
 
 .add-btn { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
     transition: all .3s;
+    cursor: pointer;
 }
 
 .add-btn:hover { 

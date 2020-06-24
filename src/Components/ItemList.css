@@ -8,11 +8,25 @@ li {
 
 .container { 
     width: 100%;
-    background-color: red;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+    border-radius: 1.5rem;
+    padding: 0rem 1rem;
+}
+
+.container.expense {
+    background-color: red;
+}
+
+.container.income {
+    background-color: green;
+}
+
+.container:hover #delete-button{
+    opacity: 1;
+    cursor: pointer;
 }
 
 .description {
@@ -24,4 +38,14 @@ li {
     display: flex;
     align-items: center;
     word-break: break-all;
+}
+
+#delete-button {
+    opacity: 0;
+    transition: all .2s;
+    transform: scale(0.6);
+}
+
+#delete-button:hover{
+    transform: scale(0.8);
 }
