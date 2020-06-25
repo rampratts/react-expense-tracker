@@ -6,9 +6,9 @@ import Input from './Input';
 import { uuid } from 'uuidv4';
 
 class App extends React.Component {
-  state = { balance: 0, newValue: 0, newDescription: '', items: [] }
+  state = { balance: 0, newValue: 0, newDescription: '', items: [], errorMessage: '' }
 
-  getNewItem = (type) => {
+  getNewItem = type => {
     const newItem = {
       id: uuid(),
       type,
@@ -26,7 +26,17 @@ class App extends React.Component {
     })
   }
 
-  addExpense = e => {
+  validateForm = () => {
+    this.setState({errorMessage: ''});
+    if(!this.state.newDescription || !this.state.newValue){
+      this.setState({errorMessage: 'You must fill both fields'});
+      return false
+    }
+    return true;
+  }
+
+  addExpense = () => {
+    if(!this.validateForm()) return false;
     const newItem = this.getNewItem('expense');
     this.setState({
       newValue: 0,
@@ -35,7 +45,8 @@ class App extends React.Component {
     }, this.calculateBalance);
   }
 
-  addIncome = e => {
+  addIncome = () => {
+    if(!this.validateForm()) return false;
     const newItem = this.getNewItem('income')
     this.setState({
       newValue: 0,
@@ -54,6 +65,7 @@ class App extends React.Component {
       <div class="content"> 
         <h1>Expense tracker</h1>
         <p>Balance: {this.state.balance}</p>
+        <p className='error-msg'>{this.state.errorMessage}</p>
         <div id='input-container'>
           <Input
             placeholder='Description' 

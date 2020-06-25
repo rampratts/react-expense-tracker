@@ -68,9 +68,14 @@ button:focus {outline:0;}
     border: 1px solid #590909;
 }
 
+.error-msg {
+    font-size: 1rem;
+    color: #d91818;
+}
+
 @media screen and (min-width: 450px) {
     #root {
-        width: 70%;
+        width: 50%;
     }
 
     #input-container {
